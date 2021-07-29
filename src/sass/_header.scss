@@ -6,15 +6,11 @@
     align-items: center;
     padding: 0 30px;
     box-shadow: $box-shadow-secondary;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 10;
 
     &__logo {
         font-size: 30px;
-        letter-spacing: 1.8px;
+        letter-spacing: 3.8px;
     }
 
     &__menu {
@@ -27,7 +23,41 @@
         &--item {
             padding: 0 20px;
             cursor: pointer;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.8px;
+
+            a {
+                text-decoration: none;
+                color: var(--white);
+                padding: 6px 0;
+                position: relative;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: -3px;
+                    height: 1.2px;
+                    background: var(--white);
+                    opacity: 0;
+                    transform: scaleX(0);
+                    transform-origin: left center;
+                    transition: all 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                }
+
+                &:hover {
+                    &::after {
+                        transform: scaleX(1);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .active {
+            font-weight: bold;
+            font-size: 22px;
+            color: #ffa502;
         }
     }
 }
