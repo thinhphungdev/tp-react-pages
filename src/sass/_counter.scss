@@ -1,0 +1,56 @@
+.counter {
+    height: $page-height;
+    position: relative;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        @include absCenter;
+
+        &--title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            h3 {
+                line-height: 8.6rem;
+                margin-right: 1.5rem;
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size:5em;
+                margin-bottom: 1.2rem;
+            }
+        }
+
+        &--buttons {
+            button {
+                width: 10rem;
+                height: 10rem;
+                border-radius: 50%;
+                border: none;
+                margin: 0 2rem;
+                font-size: 4.2em;
+                box-shadow: 0 4px 32px 0 rgba(10,14,29,.37), 0 8px 64px 0 rgba(10,14,29,.04);
+                cursor: pointer;
+                transition: all 0.1s ease-in-out;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                     transform: translateY(-3px);
+                }
+
+                &:active {
+                    transform: translateY(2px);
+                    box-shadow: $box-shadow-primary;
+                }
+            }
+        }
+    }
+}
