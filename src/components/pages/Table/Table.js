@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { useTable, usePagination } from 'react-table';
 import { COLUMNS } from './columns.js';
+import { API_URL } from '../../../config.js';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setTableData } from '../../../store/tableSlice.js';
@@ -14,7 +15,7 @@ const Table = (props) => {
 
     useEffect(() => {
         const getTableData = async () => {
-            const response = await axios.get('https://6102b82b79ed6800174822b8.mockapi.io/employees');
+            const response = await axios.get(API_URL);
             
             if (response.status === 200) {
                 dispatch(setTableData(response.data))

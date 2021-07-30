@@ -3,6 +3,7 @@ import React, {useRef} from 'react';
 import { useDispatch } from 'react-redux';
 import {updateTableData} from '../../store/tableSlice.js';
 import { Button, Modal } from 'react-bootstrap';
+import { API_URL } from '../../config.js';
 
 function CustomModal(props) {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function CustomModal(props) {
             position: positionRef.current.value
         }
 
-        axios.post('https://6102b82b79ed6800174822b8.mockapi.io/employees', newEmployee)
+        axios.post(API_URL, newEmployee)
         .then(response => dispatch(updateTableData(response.data)))
         .catch(err => console.log('err', err))
         .finally(() =>  props.closeModal())
