@@ -10,10 +10,13 @@ export const tableSlice = createSlice({
     reducers: {
         setTableData (state, action) {
             state.data = action.payload
+        },
+        updateTableData (state, action) {
+            state.data = [...state.data, action.payload]
         }
     }
 });
 
-export const {setTableData} = tableSlice.actions;
+export const {setTableData, updateTableData} = tableSlice.actions;
 
 export default tableSlice.reducer;

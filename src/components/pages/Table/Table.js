@@ -9,7 +9,7 @@ import { setTableData } from '../../../store/tableSlice.js';
 import Button from '../../UI/Button.js';
 
 const Table = (props) => {
-    const tableData = useSelector(state => state.table.data)
+    const tableData = useSelector(state => state.table.data);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -17,8 +17,7 @@ const Table = (props) => {
             const response = await axios.get('https://6102b82b79ed6800174822b8.mockapi.io/employees');
             
             if (response.status === 200) {
-                const data = response.data;
-                dispatch(setTableData(data))
+                dispatch(setTableData(response.data))
             } else throw new Error()
         }
 
