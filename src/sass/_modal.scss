@@ -1,0 +1,22 @@
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 10px;
+
+    label {
+        cursor: pointer;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+}

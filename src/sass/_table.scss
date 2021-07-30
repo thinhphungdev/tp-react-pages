@@ -1,0 +1,93 @@
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .table-btn {
+        padding: 6px 12px;
+        background: $color-primary;
+        color: var(--white);
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        outline: none;
+        border: thin solid transparent;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        transition: all 200ms ease-in;
+        font-weight: bold;
+
+        &:hover {
+            background: #0b5ed7;
+            color: var(--white);
+            transform: translateY(-2.5px);
+        }
+
+        &:active {
+            transform: translateY(1.8px);
+        }
+    }
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 680px;
+    min-height: 30rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    font-weight: 700;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 16px;
+
+    thead tr {
+        background-color: $color-primary;
+        color: #ffffff;
+        text-align: left;
+
+        th {
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+
+
+    th, td {
+        padding: 12px 24px;
+    }
+
+    tbody tr {
+        border-bottom: thin solid #dddddd;
+
+        &:nth-of-type(even) {
+            background-color: #f3f3f3;
+            font-weight: bold;
+            color: $color-primary;
+        }
+
+        &:last-of-type {
+            border-bottom: 2px solid $color-primary;
+        }
+    }
+}
+
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-size: 18px;
+        padding: 0 15px;
+    }
+
+    button {
+        padding: 5px 12px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
